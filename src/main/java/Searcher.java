@@ -61,7 +61,7 @@ class Searcher {
         for (JsonObj obj: App.jsonObjs) {
             int[] _creationTime = Arrays.asList(obj.created.split("-")).stream().mapToInt(Integer::parseInt).toArray();
             Date creationTime = new Date(_creationTime[0], _creationTime[1], _creationTime[2]);
-            if(creationTime.after(fromDate) && creationTime.before(toDate) || creationTime.equals(fromDate) || creationTime.equals(toDate)){
+            if((creationTime.after(fromDate) && creationTime.before(toDate)) || creationTime.equals(fromDate) || creationTime.equals(toDate)){
                 objList.add(obj);
             }
         }
