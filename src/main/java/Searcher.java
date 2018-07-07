@@ -47,7 +47,6 @@ class Searcher {
         }
 
         return objList;
-
     }
 
     LinkedList<JsonObj> searchByCreationTime(String _fromDate, String _toDate){
