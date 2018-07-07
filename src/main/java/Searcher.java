@@ -38,7 +38,7 @@ class Searcher {
     LinkedList<JsonObj> searchByLoggedTimeLessThan(Integer days){
 
         LinkedList<JsonObj> objList = new LinkedList<>();
-        Integer loggedTimeSecond = days*24*60*60;
+        Integer loggedTimeSecond = days*86400; //24*60*60=86400
 
         for (JsonObj obj: App.jsonObjs){
             if (obj.loggedTime < loggedTimeSecond) {
