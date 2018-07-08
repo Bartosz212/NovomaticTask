@@ -19,15 +19,25 @@ public class App {
         String fromDate = "2017-06-02";
         String toDate = "2018-03-08";
 
-        LinkedList<JsonObj> l;
-        LinkedList<String> pN;
-        l = searcher.searchByReporterName(name);
-        l = searcher.searchByWordsInDescription(arr);
-        l = searcher.searchBySummaryLengthLessThan(summaryLength);
-        l = searcher.searchByLoggedTimeLessThan(numberOfDays);
-        l = searcher.searchByCreationTime(fromDate,toDate);
-        pN = searcher.searchProjectNamesByIssues();
-        System.out.println(pN);
-        l.forEach(JsonObj::print);
+        LinkedList<JsonObj> list;
+        LinkedList<String> projectNames;
+
+        //Wywołania poszczególnych wyszukiwań
+
+        //list = searcher.searchByReporterName(name);
+
+        //list = searcher.searchByWordsInDescription(arr);
+
+        //list = searcher.searchBySummaryLengthLessThan(summaryLength);
+
+        //list = searcher.searchByLoggedTimeLessThan(numberOfDays);
+
+        list = searcher.searchByCreationTime(fromDate,toDate);
+        
+        projectNames = searcher.searchProjectNamesByIssues();
+
+        System.out.println(projectNames);
+
+        list.forEach(JsonObj::print);
     }
 }
